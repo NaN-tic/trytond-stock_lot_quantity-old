@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!-- This file is part stock_lot_quantity module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
+<data>
+    <xpath expr="/form/field[@name='lot']" position="replace">
+        <field name="lot" view_ids="stock_lot_quantity.stock_lot_view_tree_quantity"/>
+    </xpath>
+</data>
