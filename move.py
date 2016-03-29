@@ -5,10 +5,10 @@ from trytond.pool import PoolMeta
 from trytond.pyson import If, Eval, Bool
 
 __all__ = ['Move']
-__metaclass__ = PoolMeta
 
 
 class Move:
+    __metaclass__ = PoolMeta
     __name__ = 'stock.move'
 
     @classmethod
