@@ -9,4 +9,3 @@ def register():
     Pool.register(
         Move,
         module='stock_lot_quantity', type_='model')
-
