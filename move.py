@@ -19,6 +19,11 @@ class Move:
             cls.lot.context = {}
         if not 'locations' in cls.lot.context:
             cls.lot.context.update({
-                    'locations': If(Bool(Eval('warehouse', {})),
-                        [Eval('warehouse', {})], []),
-                    })
+                'locations': If(Bool(Eval('warehouse', {})),
+                    [Eval('warehouse', {})],
+                    If(Bool(Eval('from_location', {})),
+                    [Eval('from_location', {})], [])),
+                })
+        for field in ('warehouse', 'from_location'):
+            if field not in cls.lot.depends:
+                cls.lot.depends.append(field)
